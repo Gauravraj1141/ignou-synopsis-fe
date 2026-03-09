@@ -1,0 +1,289 @@
+/* ── Reset & Global ─────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f0f2f5;
+}
+
+/* ── Full-screen centred background ─────────────────── */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f2f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 1rem;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.login-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 2.5rem 2.25rem 2rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+/* ── Logo ────────────────────────────────────────────── */
+.login-logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.login-logo-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  border: 1.5px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-logo-circle svg {
+  width: 26px;
+  height: 26px;
+  fill: none;
+  stroke: #111827;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Headings ─────────────────────────────────────────── */
+.login-title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.01em;
+}
+
+.login-subtitle {
+  text-align: center;
+  font-size: 0.82rem;
+  color: #6b7280;
+  margin-bottom: 1.75rem;
+}
+
+/* ── Login-as label ───────────────────────────────────── */
+.login-role-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.5rem;
+}
+
+/* ── Role toggle ──────────────────────────────────────── */
+.login-role-toggle {
+  display: flex;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.login-role-btn {
+  flex: 1;
+  padding: 0.6rem 0;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+  color: #374151;
+  transition: background 0.15s, color 0.15s;
+}
+
+.login-role-btn:first-child {
+  border-right: 1.5px solid #e5e7eb;
+}
+
+.login-role-btn.active {
+  background: #111827;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ── Form group ───────────────────────────────────────── */
+.login-form-group {
+  margin-bottom: 1.1rem;
+}
+
+.login-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 0.4rem;
+}
+
+/* ── Input wrapper ───────────────────────────────────── */
+.login-input-wrapper {
+  position: relative;
+}
+
+.login-input {
+  width: 100%;
+  padding: 0.65rem 2.5rem 0.65rem 0.85rem;
+  font-size: 0.9rem;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.15s;
+  color: #111827;
+  background: #fff;
+}
+
+.login-input::placeholder {
+  color: #9ca3af;
+}
+
+.login-input:focus {
+  border-color: #111827;
+  box-shadow: 0 0 0 3px rgba(17, 24, 39, 0.08);
+  background: #fff;
+}
+
+/* error state */
+.login-form-group.error .login-input {
+  border-color: #dc2626;
+}
+
+.login-error-msg {
+  display: none;
+  font-size: 0.78rem;
+  color: #dc2626;
+  margin-top: 0.35rem;
+}
+
+.login-form-group.error .login-error-msg {
+  display: block;
+}
+
+/* ── Show / hide password button ─────────────────────── */
+.login-toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  transition: color 0.2s;
+}
+
+.login-toggle-password:hover {
+  color: #6b7280;
+}
+
+.login-toggle-password svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* hide left icon — not used in new design */
+.login-input-icon { display: none; }
+
+/* ── Remember me + forgot password row ───────────────── */
+.login-row { display: none; }
+
+/* ── Submit button ────────────────────────────────────── */
+.login-btn {
+  width: 100%;
+  padding: 0.7rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #fff;
+  background: #111827;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.login-btn:hover:not(:disabled) {
+  background: #1f2937;
+}
+
+.login-btn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.login-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ──────────────────────────────────────────── */
+.login-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2.5px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ── Server error banner ──────────────────────────────── */
+.login-server-error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  color: #dc2626;
+  margin-bottom: 1.25rem;
+}
+
+.login-server-error svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: #dc2626;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ── Divider + signup — hidden in new design ─────────── */
+.login-divider,
+.login-signup-text { display: none; }
