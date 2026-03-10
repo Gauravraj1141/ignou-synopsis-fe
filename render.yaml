@@ -2,7 +2,6 @@ services:
   - type: web
     name: facetrack-frontend
     runtime: static
-    rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: build
     routes:
